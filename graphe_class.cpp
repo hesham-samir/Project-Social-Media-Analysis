@@ -36,6 +36,17 @@ public:
 		return 0;
 	}
 
+	int get_node_degree(int id)
+	{
+		return adj_list[id].size();
+	}
+	void print_all_degree()
+	{
+		for (int i = 0; i < this->nodes_num; i++)
+		{
+			cout << get_node_degree(i)<<"\n";
+		}
+	}
 	void print_matrix()
 	{
 		for (int i = 0; i < this->nodes_num; i++)
@@ -60,6 +71,8 @@ int main()
 	G.add_edge(3, 1, 1);
 	G.add_edge(2, 3, 4);
 	G.print_matrix();
+	cout << "TESTING DEGREE CENTRALITY ....\n\n";
+	G.print_all_degree();
 
 	cout<<"\n"<<"weight from 0 to 2 is :  "<<G.get_edge(0, 2);
 }
